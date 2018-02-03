@@ -1,13 +1,28 @@
-const modals = document.querySelector("#modals");
-const portfolioHydrohealth = document.querySelector("#portfolio-hydrohealth");
-const modalClose = document.querySelector(".modal__close");
+const hamburger = document.querySelector('.navbar__list--hamburger');
+const sideNavClose = document.querySelector('#navbar__sidenav__close');
+const sideNav = document.querySelector('#navbar__sidenav');
+const sideNavItems = document.querySelectorAll('.navbar__list__item');
 
-handlePortfolioClick = e => {
-  modals.classList.remove("hide");
-  modalClose.addEventListener("click", () => modals.classList.add("hide"));
-  window.addEventListener("click", e => {
-    if (e.target.id === "modals") modals.classList.add("hide");
+hamburger.addEventListener('click', () => {
+  sideNavItems.forEach(item => {
+    item.classList.remove('hide');
   });
-};
+  sideNav.style.width = '100%';
+});
 
-portfolioHydrohealth.addEventListener("click", handlePortfolioClick);
+sideNavClose.addEventListener('click', () => {
+  sideNav.style.width = 0;
+});
+
+sideNavItems.forEach(item => {
+  item.addEventListener('click', () => {
+    sideNav.style.width = 0;
+    event.preventDefault();
+    let section = document.querySelector(item.childNodes[1].getAttribute('href'));
+    section.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+    setTimeout(() => section.focus(), 500);
+  });
+});
