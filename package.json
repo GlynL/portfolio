@@ -1,0 +1,26 @@
+{
+  "name": "portfolio-2.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GlynL/portfolio.git"
+  },
+  "author": "glyn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GlynL/portfolio/issues"
+  },
+  "homepage": "https://glynl.github.io/portfolio",
+  "devDependencies": {
+    "gh-pages": "^1.1.0"
+  },
+  "dependencies": {
+    "slick-carousel": "^1.8.1"
+  }
+}
