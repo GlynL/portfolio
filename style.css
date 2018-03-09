@@ -1,0 +1,245 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Raleway', sans-serif;}
+
+a {
+  color: #d3d9e6;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+#navbar a:not(:first-child):hover {
+  border-bottom: 1px solid white;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#navbar {
+  color: white;
+  font-size: 1.6rem;
+  background: #3f4c6b;
+  background: linear-gradient(to bottom, #687daf 0%, #3f4c6b 100%);
+  box-shadow: inset 0 -3px 2px -2px #262e41;
+  height: 50px;
+}
+
+#navbar__sidenav {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 322px;
+  width: 0; /* width added in javascript click */
+  background: #3f4c6b; /* Old browsers */
+  background: linear-gradient(to right, #262e41 0%, #3f4c6b 50%, #262e41 100%);
+  transition: all 1s;
+}
+
+#navbar__sidenav li:not(:first-child):hover {
+  background: #3f4c6b;
+  background: linear-gradient(to right, #3f4c6b 0%, #687daf 50%, #3f4c6b 100%);
+  box-shadow: inset 0 -3px 2px -2px #687daf;
+}
+
+#navbar__sidenav__close {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  font-size: 3rem;
+}
+
+#navbar__sidenav a{
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#navbar__list {
+  padding-left: 20px;
+  list-style: none;
+  display: flex;
+}
+
+#navbar__list--right {
+  margin-left: auto;
+  padding-right: 20px;
+}
+
+/* TODO: Change heading font */
+#intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #3f4c6b; /* Old browsers */
+  background: linear-gradient(to right, #262e41 0%, #3f4c6b 50%, #262e41 100%);
+  color: #d3d9e6;
+  text-align: center;
+  font-size: 2rem;
+  box-shadow: inset 0 -3px 2px -2px #687daf;
+}
+
+#intro__portrait {
+  border-radius: 50%;
+  width: 120px;
+}
+
+#skills {
+  background: #3f4c6b;
+  background: linear-gradient(to right, #3f4c6b 0%, #687daf 50%, #3f4c6b 100%);
+  display: flex;
+  justify-content: center;
+  box-shadow: inset 0 -3px 2px -2px #687daf;
+}
+
+.skills__item {
+  height: 100px;
+  width: 70px;
+  margin: 20px;
+}
+
+.skills__item--lg {
+  width: 100px;
+}
+
+.skills__item img,
+.skills__item--lg img {
+  width: 100%;
+  height: 100%;
+}
+
+#portfolio {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#portfolio a {
+  display: flex;
+  flex-flow: column;
+  position: relative;
+  flex-grow: 1;
+  flex-basis: 100%;
+}
+
+#portfolio img {
+  display: block;
+  width: 100%;
+}
+
+#portfolio .overlay {
+  background: #59698f;
+  flex-grow: 1;
+  box-shadow: inset 0 -5px 4px -4px #687daf;
+  padding: 10px 0 10px 10px;
+}
+
+#portfolio h2 {
+  margin: 0;
+}
+
+
+#portfolio ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.swiper-container {
+  width: 100%;
+  max-height: 300px;
+}
+
+.swiper-container {
+  background-position: center;
+  background-size: cover;
+}
+
+.swiper-slide__image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.swiper-btn {
+  display: none;
+}
+
+#footer {
+  background: white;
+}
+
+/* tablets */
+@media screen and (min-width: 570px) {
+  #portfolio a {
+    flex-basis: 50%;
+  }
+}
+
+/* medium/large devices  */
+@media screen and (min-width: 992px) {
+  #portfolio a {
+    flex-basis: calc(100% / 4);
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 1s ease;
+    background: #36425c;
+    padding: 10px 0 0 20px;
+    box-sizing: border-box;
+    color: #d3d9e6;
+    font-size: 1.8rem;
+    text-align: left;
+    box-shadow: inset 0 2px 2px -2px #687daf;
+  }
+
+  .overlay h2 {
+    margin: 0 0 10px 0;
+  }
+
+  .overlay h3 {
+    margin: 0 0 10px 0;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.8rem;
+  }
+
+  .overlay ul {
+    margin-left: 15px;
+    padding: 0;
+  }
+
+  #portfolio a:hover .overlay {
+    opacity: 1;
+  }
+
+  .swiper-container {
+    max-height: 500px;
+  }
+
+  .swiper-wrapper:hover {
+    opacity: 0.5;
+    transition: opacity 0.5s ease !important;
+  }
+
+  .swiper-btn {
+    display: block;
+    opacity: 0.4;
+  }
+
+  .swiper-btn:hover {
+    opacity: 1;
+  }
+}
